@@ -2,16 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:motherly/constants/const_images.dart';
 import 'package:motherly/constants/constat_colors.dart';
 import 'package:motherly/constants/font_family.dart';
+import 'package:motherly/controllers/navigation_controller.dart';
 import 'package:motherly/widgets/buttons.dart';
 import 'package:motherly/widgets/divider.dart';
 import 'package:motherly/widgets/icons.dart';
 import 'package:motherly/widgets/refact_text.dart';
 import 'package:motherly/widgets/text_form_field.dart';
 class PaymentMode extends StatelessWidget {
-  const PaymentMode({Key? key}) : super(key: key);
+   PaymentMode({Key? key}) : super(key: key);
+   NavigationController _controller=Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,9 @@ class PaymentMode extends StatelessWidget {
               children: [
                 divider(height: 89.1.h),
                 IconButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      _controller.backButton();
+                    },
                     icon: SvgPicture.asset(
                       backArroIcon,
                       color: Colors.black,
@@ -154,7 +160,9 @@ class PaymentMode extends StatelessWidget {
                   (  width: 302.w,height: 48.h,
                   buttonText: "Create Account",
                     gradient: true,
-                    onTap: (){},
+                    onTap: (){
+                    _controller.buttonOnClickToParentHome();
+                    },
                     dividerWidth: 0,
                   buttonColor: buttonBackgroundColor,
                   textColor: whiteTextColor,

@@ -8,16 +8,18 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:motherly/constants/const_images.dart';
 import 'package:motherly/constants/constat_colors.dart';
 import 'package:motherly/constants/font_family.dart';
-import 'package:motherly/controllers/home_cards_controller.dart';
 import 'package:motherly/controllers/home_controller.dart';
 import 'package:motherly/widgets/aligment_refact.dart';
 import 'package:motherly/widgets/buttons.dart';
 import 'package:motherly/widgets/consut_book_list.dart';
+import 'package:motherly/widgets/doula_image_list.dart';
 import 'package:motherly/widgets/features_list.dart';
 import 'package:motherly/widgets/divider.dart';
 import 'package:motherly/widgets/feature_card.dart';
 import 'package:motherly/widgets/lifestyle_blog_etc_list.dart';
 import 'package:motherly/widgets/new_widgets.dart';
+import 'package:motherly/widgets/share_doubts_card.dart';
+import 'package:motherly/widgets/share_doubts_list.dart';
 import 'package:motherly/widgets/skill_set_list.dart';
 import 'package:motherly/widgets/home_1st_scroll.dart';
 import 'package:motherly/widgets/icons.dart';
@@ -171,11 +173,35 @@ class ParentHomePage extends StatelessWidget {
                           fontFamily: medium,fontSize:12.sp,
                           color: offerTxtGrey,fontWeight: FontWeight.w500,
                         ),),
-                      )
+                      ),
+                      divider(height: 22.6.h),
+                      shareDoubtsListView(),
                     ],
                   ),
                   ),
                 ),
+        divider(height: 48.h),
+                refactText(
+                  text: "Meet Our Doulas",
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: exploreFeaturePink,fontFamily: semiBold,
+                ),
+                divider(height: 19.h),
+                doulaImageList(),
+                divider(height: 86.h),
+                SizedBox(
+                  width: 78.w,
+                  height: 78.w,
+                  child: Image.asset(logo,fit: BoxFit.contain,),
+                ),
+                refactText(
+                  text: "Mothrly",
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: exploreFeaturePink,fontFamily: semiBold,
+                ),
+                divider(height: 118.h),
               ],
             ),
           ),

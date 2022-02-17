@@ -15,9 +15,10 @@ class BottomNavBar extends StatelessWidget {
     return GetBuilder<BottomNavController>(
       init: BottomNavController(),
       builder: (controller) {
-        return Scaffold(
-          body:ParentHomePage(),
-          //controller.screens[controller.currentIndex],
+        return SafeArea(
+          child: Scaffold(
+            body:ParentHomePage(),
+            //controller.screens[controller.currentIndex],
 
 bottomNavigationBar: Container(
   decoration:const BoxDecoration(
@@ -27,8 +28,8 @@ bottomNavigationBar: Container(
     ),
     boxShadow: <BoxShadow>[
       BoxShadow(
-        color: Colors.grey,
-        blurRadius: 10,
+          color: Colors.grey,
+          blurRadius: 10,
 
       ),
     ],
@@ -39,61 +40,62 @@ bottomNavigationBar: Container(
       topLeft: Radius.circular(20,),
     ),
     child: BottomNavigationBar(
-         // selectedIconTheme: IconThemeData(color: Colors.red, size: 25, opacity: .8),
-            currentIndex: controller.currentIndex,
-             showUnselectedLabels: false,
-             showSelectedLabels: false,
-            type: BottomNavigationBarType.fixed,
-            //backgroundColor: Colors.green,
-            onTap: (index){
-              controller.currentIndex =index;
-              print("----------${ controller.currentIndex}");
-              controller.update();
+           // selectedIconTheme: IconThemeData(color: Colors.red, size: 25, opacity: .8),
+              currentIndex: controller.currentIndex,
+               showUnselectedLabels: false,
+               showSelectedLabels: false,
+              type: BottomNavigationBarType.fixed,
+              //backgroundColor: Colors.green,
+              onTap: (index){
+                controller.currentIndex =index;
+                print("----------${ controller.currentIndex}");
+                controller.update();
 
-            },
-            items: [
-          BottomNavigationBarItem(
-            icon:
-            //Icon(Icons.nat_outlined),
-            controller.currentIndex==0? gredientIcon(iconName: homeIcon) :
-            refactIcons(picture: homeIcon,width: 27.5.w,height: 26.h,
+              },
+              items: [
+            BottomNavigationBarItem(
+              icon:
+              //Icon(Icons.nat_outlined),
+              controller.currentIndex==0? gredientIcon(iconName: homeIcon) :
+              refactIcons(picture: homeIcon,width: 27.5.w,height: 26.h,
+              ),
+              label: "",
+
+
             ),
-            label: "",
+            BottomNavigationBarItem(
+              icon:controller.currentIndex==1? gredientIcon(iconName: doulaIcon) :
+              refactIcons(picture: doulaIcon,width: 27.5.w,height: 26.h,),
+              label: "",
 
 
-          ),
-          BottomNavigationBarItem(
-            icon:controller.currentIndex==1? gredientIcon(iconName: doulaIcon) :
-            refactIcons(picture: doulaIcon,width: 27.5.w,height: 26.h,),
-            label: "",
+            ),
+            BottomNavigationBarItem(
+              icon:controller.currentIndex==2? gredientIcon(iconName: peopleIcon) :
+              refactIcons(picture: peopleIcon,width: 27.5.w,height: 26.h,),
+              label: "",
 
 
-          ),
-          BottomNavigationBarItem(
-            icon:controller.currentIndex==2? gredientIcon(iconName: peopleIcon) :
-            refactIcons(picture: peopleIcon,width: 27.5.w,height: 26.h,),
-            label: "",
+            ),
+            BottomNavigationBarItem(
+              icon:controller.currentIndex==3? gredientIcon(iconName: doctorIcon) :
+              refactIcons(picture: doctorIcon,width: 27.5.w,height: 26.h,),
+              label: "",
 
 
-          ),
-          BottomNavigationBarItem(
-            icon:controller.currentIndex==3? gredientIcon(iconName: doctorIcon) :
-            refactIcons(picture: doctorIcon,width: 27.5.w,height: 26.h,),
-            label: "",
+            ),
+            BottomNavigationBarItem(
+              icon:controller.currentIndex==4? gredientIcon(iconName: chatIcon) :
+              refactIcons(picture: chatIcon,width: 27.5.w,height: 26.h,),
+              label: "",
 
 
-          ),
-          BottomNavigationBarItem(
-            icon:controller.currentIndex==4? gredientIcon(iconName: chatIcon) :
-            refactIcons(picture: chatIcon,width: 27.5.w,height: 26.h,),
-            label: "",
-
-
-          ),
+            ),
     ]
     ),
   ),
 ),
+          ),
         );
       }
     );

@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:motherly/constants/constat_colors.dart';
 import 'package:motherly/constants/font_family.dart';
+import 'package:motherly/controllers/navigation_controller.dart';
+
 import 'package:motherly/widgets/buttons.dart';
 import 'package:motherly/widgets/divider.dart';
 import 'package:motherly/widgets/refact_text.dart';
 
 class ProfileSetup extends StatelessWidget {
-  const ProfileSetup({Key? key}) : super(key: key);
-
+  NavigationController _controller=Get.find();
+  ProfileSetup({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +67,9 @@ class ProfileSetup extends StatelessWidget {
                  width: 302.w,height: 48.h,
                  buttonText: "continue",
                  gradient: true,
-                 onTap: (){},
+                 onTap: (){
+                   _controller.buttonOnClickToPaymentMode();
+                 },
                  dividerWidth: 0,
                  buttonColor:buttonBackgroundColor,
                  textColor: Colors.white

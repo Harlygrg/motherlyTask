@@ -2,15 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:motherly/constants/const_images.dart';
 import 'package:motherly/constants/constat_colors.dart';
+import 'package:motherly/controllers/navigation_controller.dart';
 import 'package:motherly/widgets/divider.dart';
 import 'package:motherly/widgets/buttons.dart';
 import 'package:motherly/widgets/icons.dart';
 import 'package:motherly/widgets/refact_text.dart';
 
+
+
 class FindDoulas extends StatelessWidget {
-  const FindDoulas({Key? key}) : super(key: key);
+  NavigationController _controller =Get.find();
+
+   FindDoulas({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,16 +82,23 @@ class FindDoulas extends StatelessWidget {
               dividerWidth: 15.w,
               buttonText: "Use current location",
                 icon: SvgPicture.asset(mapIcon,color: iconColor,),
-              onTap: (){}
+              onTap: (){
+                _controller.buttonOnClickToProfileSetup();
+              }
             ),
             divider(height:15.8.h, ),
+           //searchTextFormFieldFirstPage(hintText: "Search your location",labelColor: homTextBlack)
             buttons(
                 width: 302.w,height: 48.h,
                 dividerWidth: 15.w,
               buttonText: "Search your location",
               icon: refactIcons(picture: searchIcon,height:15.h,width:15.w, ),
               //SvgPicture.asset(searchIcon,color: iconColor,h),
-              onTap: (){}
+              onTap:
+                  (){
+                  _controller.buttonOnClickToProfileSetup();
+                  }
+              //controller.buttonOnClick(),
             ),
 
           ],

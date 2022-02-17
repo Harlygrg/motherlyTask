@@ -13,6 +13,10 @@ const pngSearchIcon = "assets2/searchIcon.png";
 const crossEyeIcon = "assets2/iconCrossEye.svg";
 const backArroIcon = "assets2/iconBackArrow.svg";
 const thumpsUpIcon  ="assets2/iconThumbsUp.svg";
+const circleAvatar ="assets2/circleAvatar.png";
+
+
+//doula images
 
 
 //images
@@ -34,3 +38,13 @@ const lifeStyle1 ="assets2/lifeStyle1.png";
 const lifeStyle2 ="assets2/lifeStyle2.png";
 const lifeStyle3 ="assets2/lifeStyle3.png";
 const lifeStyle4 ="assets2/lifeStyle4.png";
+
+
+//doula images
+const doula1 = "assets2/images (3) - Copy.png";
+const doula2 = "assets2/images - Copy.png";
+const doula3 = "assets2/Monika Shergill.png";
+const doula4 = "assets2/shachi-irde_660_100516091558 - Copy.png";
+
+
+const logo ="assets2/logo-11-removebg-preview.png";

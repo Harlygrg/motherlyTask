@@ -13,6 +13,7 @@ const buttonColorPinkTop =Color(0xffF78190);
 const iconBlack =Color(0xff515151);
 const homeTextColor =Color(0xff555555);
 const hintTextColor =Color(0xffC1C1C1);
+const blueCardText=Color(0xff3E8EEA);
 const cardColor =Color(0xffB2B2B2);
 const homTextBlack = Color(0xff393939);
 const homeTextGreay = Color(0xff999999);

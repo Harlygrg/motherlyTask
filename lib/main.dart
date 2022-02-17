@@ -8,17 +8,17 @@ import 'package:motherly/Screens/parent_home_page.dart';
 import 'package:motherly/Screens/payment_mode.dart';
 import 'package:motherly/Screens/profile_setup.dart';
 import 'package:motherly/controllers/bottom_nav_controller.dart';
+import 'package:motherly/controllers/navigation_controller.dart';
 import 'package:motherly/widgets/bottom_nav.dart';
 import 'package:motherly/widgets/icons.dart';
 
-import 'controllers/home_cards_controller.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  Get.put(BottomNavController());
-  Get.put(HomeCardsController());
   runApp(const MyApp());
+  Get.put(NavigationController());
+  final controller=Get.put(NavigationController());
 }
 
 class MyApp extends StatelessWidget {
@@ -42,13 +42,14 @@ class MyApp extends StatelessWidget {
             ),
             home:
             //IconSample(),
-            BottomNavBar(),
+            //BottomNavBar(),
             //ParentHomePage(),
             //PaymentMode(),
             //ProfileSetup(),
-            //FindDoulas() ,
+            FindDoulas() ,
           ),
       designSize: Size(375, 812),
+
     );
   }
 }

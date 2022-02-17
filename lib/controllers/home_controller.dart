@@ -50,4 +50,43 @@ List doulaSkillList = [
 ];
 
 
+List shareDoubtsList=[
+  {
+    "image":  doula1, "title": "Asked by Mother", "time": "5m ago",
+    "ageAndPlace": "28 years, Kolkata",
+    "question": "Is hair loss normal after a month of child's birth?",
+    "answer": "2 answers from doctors."
+  },
+  {
+    "image":  doula1, "title": "Asked by Mother", "time": "5m ago",
+    "ageAndPlace": "28 years, Kolkata",
+    "question": "Is hair loss normal after a month of child's birth?",
+    "answer": "2 answers from doctors."
+  },
+  {
+    "image":  doula1, "title": "Asked by Mother", "time": "5m ago",
+    "ageAndPlace": "28 years, Kolkata",
+    "question": "Is hair loss normal after a month of child's birth?",
+    "answer": "2 answers from doctors."
+  },
+];
+
+
+    List doulaImageList =[
+      doula1,
+      doula2,
+      doula3,
+      doula4,
+      doula1,
+      doula2,
+      doula3,
+      doula4,
+      doula1,
+      doula2,
+      doula3,
+      doula4,
+    ];
+
+
+
 }

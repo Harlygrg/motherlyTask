@@ -15,6 +15,7 @@ textFormField({
   bool obscuretext =false,
   AutovalidateMode? autovalidateMode,
   TextInputType? keyboardType,
+  Color labelTextColor=formHintText,
 }){
   return SizedBox(
     width: 303.w,
@@ -23,7 +24,7 @@ textFormField({
       decoration: InputDecoration(
         suffixIcon: icon,
         labelStyle: TextStyle(
-          fontFamily: semiBold,fontSize: 14.sp,color:formHintText,
+          fontFamily: semiBold,fontSize: 14.sp,color:labelTextColor,
         ),
         labelText:hintText,
         fillColor: Colors.white,
@@ -58,6 +59,7 @@ searchTextFormField({
   bool obscuretext =false,
   AutovalidateMode? autovalidateMode,
   TextInputType? keyboardType,
+  Color labelColor=hintTextColor,
 }){
   return Container(
     width: 339.w,
@@ -89,9 +91,79 @@ searchTextFormField({
           ),
         ),
         labelStyle: TextStyle(
-            fontFamily: semiBold,fontSize: 14.sp,color:hintTextColor
+            fontFamily: semiBold,fontSize: 14.sp,color:labelColor
         ),
         labelText:hintText,
+        fillColor: Colors.white,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24.0),
+          borderSide: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(24.0),
+          borderSide: BorderSide(
+            color: Colors.white,
+            width: 1.0,
+          ),
+        ),
+      ),
+      validator: validator,
+      controller: controller,
+      obscureText: obscuretext,
+      autovalidateMode:autovalidateMode ,
+      keyboardType: keyboardType,
+    ),
+  );
+}
+
+
+
+
+searchTextFormFieldFirstPage({
+  required String hintText,
+  Widget ?icon,
+  String? Function (String?)? validator,
+  TextEditingController? controller,
+  bool obscuretext =false,
+  AutovalidateMode? autovalidateMode,
+  TextInputType? keyboardType,
+  Color labelColor=hintTextColor,
+}){
+  return Container(
+    width: 302.w,
+    height: 48.h,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(24),
+      boxShadow:const [
+        BoxShadow(
+          color: Colors.grey,
+          blurRadius: 6.0, // soften the shadow
+          spreadRadius: .01, //extend the shadow
+          offset: Offset(
+            0.0, // Move to right 10  horizontally
+            3.0, // Move to bottom 10 Vertically
+          ),
+        )
+      ],
+    ),
+    child: TextFormField(
+      decoration: InputDecoration(
+        prefixIcon: Container(
+          width: 40.w,
+          child: Row(
+            children: [
+              divider(width: 26.6.w),
+              refactIcons(picture: searchIcon,width: 15.w,height: 15.w),
+            ],
+          ),
+        ),
+        hintStyle: TextStyle(
+            fontFamily: semiBold,fontSize: 14.sp,color:labelColor
+        ),
+        hintText:hintText,
         fillColor: Colors.white,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24.0),
